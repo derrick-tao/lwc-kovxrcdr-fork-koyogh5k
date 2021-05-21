@@ -1,0 +1,23 @@
+<template>
+	<lightning-layout class="slds-p-top_small" vertical-align="center">
+		<lightning-layout-item flexibility="auto" style="height: 3.5rem;" class="queue-input slds-col_bump-right">
+			<lightning-grouped-combobox required label="Queue" placeholder="Search Queue..." input-pill={_pill}
+				input-text={_inputText} value={_value} items={_availableOptions} onpillremove={handlePillRemove}
+				ontextinput={handleContactInput} onselect={handleContactSelect}>
+			</lightning-grouped-combobox>
+		</lightning-layout-item>
+		<lightning-layout-item style="height: 0.1rem;" class="checkbox-input slds-p-left_small">
+			<ul class="slds-list_horizontal">
+				<li class="slds-p-top_xxx-small">
+					<lightning-input type="checkbox" label="Synchronous" name="input1" checked={synchronous}
+						onchange={handleSynchronousChange}>
+					</lightning-input>
+				</li>
+				<li>
+					<lightning-button-icon icon-name="utility:close" variant="bare" alternative-text="Add user" size="large"
+						title="Remove Row" onclick={handleRemoveRow} disabled={_disableRemove}></lightning-button-icon>
+				</li>
+			</ul>
+		</lightning-layout-item>
+	</lightning-layout>
+</template>
