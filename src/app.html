@@ -30,8 +30,10 @@
 					</lightning-layout-item>
 					<lightning-layout-item size="4" padding="around-small">
 						<h2>Job Profile Settings</h2>
-						<lightning-input required type="number" name="shrinkage" label="Shrinkage" value=""
-							placeholder="Enter Percentage..." formatter="percent" step="0.01">
+						<lightning-input required type="number" name="shrinkage" label="Shrinkage (%)" value=""
+							placeholder="Enter Percentage..." formatter="percent-fixed" step="0.1" max="100" min="0"
+							message-when-range-underflow="Enter a value between 0.0 and 100.0."
+							message-when-range-overflow="Enter a value between 0.0 and 100.0.">
 						</lightning-input>
 					</lightning-layout-item>
 				</lightning-layout>
